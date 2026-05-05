@@ -1,0 +1,126 @@
+*{
+    margin:0;
+    padding:0;
+    
+}
+
+header{
+    background-color: rgba(255,255,255,0.9);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+}
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg, 
+    rgb(72, 31, 21) 0%,     
+    rgb(196, 153, 48) 10%,   
+    rgba(196, 153, 48, 0) 95% 
+);
+  
+  filter: drop-shadow(0px 2px 4px rgba(72, 31, 21, 0.2));
+}
+
+header>div.left{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+}
+header>div.right{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+header>div.left>img{
+    padding: 2%;
+    width:10%;
+}
+header>div.left>p{
+    font-size: 180%;
+    color: rgb(196,153,48);
+    font-weight: bold;
+}
+
+header>div.right>a{
+    text-decoration: none;
+    color: rgb(72, 31, 21);
+    font-size: 130%;
+    padding: 2%;
+    transition: background-color 0.3s ease;
+}
+
+header>div.right>a:hover{
+    background-color: rgba(196, 153, 48, 0.1);
+}
+
+footer{
+    background-color: rgb(72, 31, 21);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 20px 0;
+    margin-top: 40px;
+    color: white;
+}
+
+div.main {
+    width: 100%;
+    height: 75vh;
+    position: relative;
+    
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)),
+                url("main.jpg");
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; 
+}
+
+div.main > h1 {
+    font-size: 500%;
+    color: rgb(196, 153, 48);
+    margin-bottom: 1%;
+    opacity: 0;
+    transform: translateY(30%);
+    animation: fadeUp 1.2s forwards;
+}
+
+div.main > p {
+    font-size: 150%;
+    font-weight: bold;
+    color: #ffffff; 
+    letter-spacing: 0.5vw;
+    opacity: 0;
+    transform: translateY(30%);
+    animation: fadeUp 1.2s 0.4s forwards; 
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
